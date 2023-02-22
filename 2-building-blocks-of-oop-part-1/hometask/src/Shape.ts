@@ -1,4 +1,4 @@
-import {Point} from "./Point";
+import { Point } from "./Point";
 
 export abstract class Shape {
   protected color: string;
@@ -8,11 +8,13 @@ export abstract class Shape {
   constructor(points: Point[]);
   constructor(points: Point[], color: string, filled: boolean);
   constructor(points: Point[], color?: string, filled?: boolean) {
-    if (points.length < 3) throw new Error();
+    if (points.length < 3) throw new Error('less than 3 points');
     this.points = points;
     this.color = color ?? 'green';
     this.filled = filled ?? true;
   }
+
+  abstract getType(): string;
 
   toString(): string {
     const filledString = this.filled ? 'filled' : 'not filled';
