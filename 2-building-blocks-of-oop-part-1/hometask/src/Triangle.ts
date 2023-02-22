@@ -13,7 +13,7 @@ export class Triangle extends Shape {
 
     getType(): string {
         const [a, b, c] = this.points.map((point, i, arr) => {
-            return point.distance(arr[(i + 1) % arr.length])
+            return point.distance(arr[(i + 1)])
     });
         if (a.toFixed() === b.toFixed() && b.toFixed() === c.toFixed()) {
             return "equilateral triangle";
