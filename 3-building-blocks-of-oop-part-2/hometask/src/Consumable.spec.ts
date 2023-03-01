@@ -1,9 +1,4 @@
-// @ts-nocheck
-
 import { Consumable } from "./Consumable";
-
-
-new Consumable("bread", 1, 1);
 
 class ConsumableWithImplementation extends Consumable {}
 

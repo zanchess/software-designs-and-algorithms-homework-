@@ -4,7 +4,7 @@ export abstract class Consumable extends Item{
     public isConsumed: boolean = false;
     private readonly _isSpoiled: boolean;
 
-    constructor(name: string, value: number, weight: number, isSpoiled: boolean) {
+    constructor(name: string, value: number, weight: number, isSpoiled: boolean = false) {
         super(name, value, weight);
         this._isSpoiled = isSpoiled
     }
