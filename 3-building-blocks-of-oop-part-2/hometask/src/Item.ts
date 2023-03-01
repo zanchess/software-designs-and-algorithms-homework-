@@ -1,11 +1,11 @@
 import { Comparable } from "./Comparable";
 
-export abstract class Item implements Comparable<any>{
+export abstract class Item implements Comparable<Item>{
     static idCounter: number = 0;
-    readonly id: number;
-    readonly name: string;
-    readonly value: number;
-    readonly weight: number;
+    private readonly id: number;
+    public name: string;
+    public value: number;
+    public readonly weight: number;
 
 
     constructor(name: string, value: number, weight: number) {
