@@ -1,14 +1,15 @@
 import { Shipment } from "./Shipment";
+import {ShipmentParams} from "./interfaces";
 
 export class Oversized extends Shipment {
     private static oversized: Oversized;
-    constructor() {
-        super();
+    constructor(shipmentParams: ShipmentParams) {
+        super(shipmentParams);
     }
 
-    getInstance(): Oversized {
+    public static getInstance(shipmentParams: ShipmentParams): Oversized {
         if (!Oversized.oversized) {
-            Oversized.oversized = new Oversized();
+            Oversized.oversized = new Oversized(shipmentParams);
         }
 
         return Oversized.oversized;

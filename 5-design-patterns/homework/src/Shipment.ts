@@ -1,14 +1,17 @@
-
+import { ShipmentParams } from "./interfaces";
+import { Shipper } from "./Shipper";
 
 export abstract class Shipment {
-    private static shipment: Shipment;
+    private shipmentParams: ShipmentParams;
     private shipmentId: number;
+    private shipper: Shipper;
 
-    constructor() {
-        this.shipmentId = 0;
+    constructor(shipmentParams: ShipmentParams, shipper: Shipper, shipmentId?: number) {
+        this.shipmentId = shipmentId || 0;
+        this.shipmentParams = shipmentParams;
+        this.shipper = shipper;
+
     }
-
-    abstract getInstance();
 
     getShipmentId(): number {
         return this.shipmentId++;

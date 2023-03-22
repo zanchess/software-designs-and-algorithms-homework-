@@ -1,14 +1,15 @@
 import { Shipment } from "./Shipment";
+import {ShipmentParams} from "./interfaces";
 
 export class Package extends Shipment {
     private static package: Package;
-    constructor() {
-        super();
+    constructor(shipmentParams: ShipmentParams) {
+        super(shipmentParams);
     }
 
-    getInstance(): Package {
+    public static getInstance(shipmentParams: ShipmentParams): Package {
         if (!Package.package) {
-            Package.package = new Package();
+            Package.package = new Package(shipmentParams);
         }
 
         return Package.package;

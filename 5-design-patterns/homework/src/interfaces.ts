@@ -1,4 +1,4 @@
-export interface shipmentParams {
+export interface ShipmentParams {
     shipmentId: number;
     weight: number;
     fromAddress: string;
