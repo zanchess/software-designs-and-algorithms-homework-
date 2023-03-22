@@ -1,6 +1,6 @@
 
 
-export class Shipment {
+export abstract class Shipment {
     private static shipment: Shipment;
     private shipmentId: number;
 
@@ -8,13 +8,7 @@ export class Shipment {
         this.shipmentId = 0;
     }
 
-    getInstance(): Shipment {
-        if (!Shipment.shipment) {
-            Shipment.shipment = new Shipment();
-        }
-
-        return Shipment.shipment;
-    }
+    abstract getInstance();
 
     getShipmentId(): number {
         return this.shipmentId++;
