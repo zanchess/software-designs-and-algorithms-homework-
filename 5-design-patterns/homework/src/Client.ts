@@ -52,7 +52,7 @@ export class Client {
         return shipment;
     }
 
-    ship(): string {
+    ship(): any {
         return this.getShipmentDetails().ship();
     }
 }

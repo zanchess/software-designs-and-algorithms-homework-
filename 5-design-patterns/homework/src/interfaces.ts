@@ -6,3 +6,9 @@ export interface ShipmentParams {
     toAddress: string;
     toZipCode: string;
 }
+
+export enum SHIPMENT_TYPE {
+    LETTER = 'Letter',
+    PACKAGE = 'Package',
+    OVERSIZED = 'Oversized'
+}

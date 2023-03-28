@@ -1,10 +1,10 @@
-import { ShipmentParams } from "./interfaces";
+import { ShipmentParams} from "./interfaces";
 import { Shipper } from "./Shipper";
 
 export abstract class Shipment {
-    private shipmentParams: ShipmentParams;
+    protected shipmentParams: ShipmentParams;
     private shipmentId: number;
-    private shipper: Shipper;
+    protected shipper: Shipper;
     private shipmentIdMock = 0;
 
     constructor(shipmentParams: ShipmentParams, shipper: Shipper, shipmentId?: number) {
@@ -19,6 +19,6 @@ export abstract class Shipment {
     }
 
     ship() {
-        return `Shipment with the ID ${this.shipmentParams.shipmentId} will be picked up from ${this.shipmentParams.fromAddress}, ${this.shipmentParams.fromZipCode} and shipped to ${this.shipmentParams.toAddress}, ${this.shipmentParams.toZipCode}\n`;
+        return `Shipment with the ID ${this.shipmentParams.shipmentId} will be picked up from ${this.shipmentParams.fromAddress}, ${this.shipmentParams.fromZipCode} and shipped to ${this.shipmentParams.toAddress}, ${this.shipmentParams.toZipCode}.\n`;
     };
 }

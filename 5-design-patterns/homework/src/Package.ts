@@ -1,5 +1,5 @@
 import { Shipment } from "./Shipment";
-import { ShipmentParams } from "./interfaces";
+import { SHIPMENT_TYPE, ShipmentParams } from "./interfaces";
 import { Shipper } from "./Shipper";
 
 export class Package extends Shipment {
@@ -14,6 +14,10 @@ export class Package extends Shipment {
         }
 
         return Package.package;
+    }
+
+    ship(): string {
+        return `${super.ship()} Cost = ${this.shipper.getCost(this.shipmentParams.weight, SHIPMENT_TYPE.PACKAGE)}`;
     }
 
 }
