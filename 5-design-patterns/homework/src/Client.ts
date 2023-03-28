@@ -10,7 +10,7 @@ import { PacificParcelShipper } from "./PacificParcelShipper";
 
 export class Client {
     private readonly shipmentParams: ShipmentParams;
-    private static ZIP_CODE_FIRST_NUMBERS = {
+    private ZIP_CODE_FIRST_NUMBERS = {
         airEast: [1, 2, 3],
         chicagoSprint: [4, 5, 6],
         pacificParcel: [7, 8, 9]
@@ -23,7 +23,7 @@ export class Client {
     getShipperDetails (): Shipper {
         const { fromZipCode } = this.shipmentParams;
         const zipCodeFirstNumber = Number(fromZipCode[0]);
-        const {airEast, chicagoSprint } = Client.ZIP_CODE_FIRST_NUMBERS;
+        const { airEast, chicagoSprint } = this.ZIP_CODE_FIRST_NUMBERS;
         let shipper: Shipper;
 
         if (airEast.includes(zipCodeFirstNumber)){
@@ -42,13 +42,30 @@ export class Client {
         let shipment: Shipment;
 
         if (weight <= 15) {
-            shipment = Letter.getInstance(this.shipmentParams);
+            shipment = Letter.getInstance(this.shipmentParams, this.getShipperDetails());
         } else if (weight > 15 && weight <= 160) {
-            shipment = Package.getInstance(this.shipmentParams);
+            shipment = Package.getInstance(this.shipmentParams, this.getShipperDetails());
         } else {
-            shipment = Oversized.getInstance(this.shipmentParams);
+            shipment = Oversized.getInstance(this.shipmentParams, this.getShipperDetails());
         }
 
         return shipment;
     }
+
+    ship(): string {
+        return this.getShipmentDetails().ship();
+    }
 }
+
+const shipmentMock: ShipmentParams = {
+    shipmentId: 1234567,
+    weight: 100,
+    fromAddress: '111 some address',
+    fromZipCode: '123123',
+    toAddress: '111 to address',
+    toZipCode: '234234',
+};
+
+
+const client = new Client(shipmentMock);
+console.log(client.ship());

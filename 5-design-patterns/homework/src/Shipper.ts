@@ -1,8 +1,4 @@
-
-
 export abstract class Shipper {
-    getCost(): number {
-        return 0;
-    }
+    abstract getCost(weight: number, type: string): number;
 
 }
