@@ -1,4 +1,5 @@
 import { Shipper } from "./Shipper";
+import { SHIPMENT_TYPE } from "./interfaces";
 
 export class ChicagoSprintShipper extends Shipper {
     private static ChicagoSprintShipper: ChicagoSprintShipper;
@@ -13,10 +14,10 @@ export class ChicagoSprintShipper extends Shipper {
         let cost: number;
 
         switch (type) {
-            case 'Letter':
+            case SHIPMENT_TYPE.LETTER:
                 cost = weight * this.LETTER_COST_PER_OUNCE;
                 break;
-            case 'Package':
+            case SHIPMENT_TYPE.PACKAGE:
                 cost = weight * this.PACKAGE_COST_PER_OUNCE;
                 break;
             default:
