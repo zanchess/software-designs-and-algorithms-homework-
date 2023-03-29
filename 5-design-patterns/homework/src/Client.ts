@@ -63,7 +63,7 @@ const shipmentMock: ShipmentParams = {
     fromAddress: '111 some address',
     fromZipCode: '123123',
     toAddress: '111 to address',
-    toZipCode: '234234',
+    toZipCode: '234235',
 };
 
 

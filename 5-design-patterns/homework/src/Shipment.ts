@@ -19,6 +19,6 @@ export abstract class Shipment {
     }
 
     ship() {
-        return `Shipment with the ID ${this.shipmentParams.shipmentId} will be picked up from ${this.shipmentParams.fromAddress}, ${this.shipmentParams.fromZipCode} and shipped to ${this.shipmentParams.toAddress}, ${this.shipmentParams.toZipCode}.\n`;
+        return `Shipment with the ID ${this.shipmentParams.shipmentId} will be picked up from ${this.shipmentParams.fromAddress}, and shipped to ${this.shipmentParams.fromZipCode}, ${this.shipmentParams.toAddress}, ${this.shipmentParams.toZipCode}.\n`;
     };
 }
