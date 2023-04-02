@@ -1,0 +1,7 @@
+| Principle       | Examples                                                                                                                                                               |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Single Responsibility Principle | [Nest js SRP](https://github.com/nestjs/nest/blob/master/integration/cache/src/async-register-extra-providers/async-register-extra.controller.ts)                      |
+| Open / Closed Principle | [Nest O/C Principle](https://github.com/nestjs/nest/blob/master/sample/01-cats-app/src/common/middleware/logger.middleware.ts)                                         |
+| Liskov Substitution Principle | [Nest Liskov Substitution Principle](https://github.com/nestjs/nest/blob/master/packages/common/exceptions/http.exception.ts) and extended errors in exceptions folder |
+| Interface Seggregation Principle | [Nest Interface Seggregation Principle example](https://github.com/nestjs/nest/blob/master/sample/14-mongoose-base/src/cats/interfaces/cat.interface.ts)               |
+| Dependency Inversion Principle | [Nest Dependency Inversion Principle](https://github.com/nestjs/nest/blob/master/sample/01-cats-app/src/common/guards/roles.guard.ts)                                                                                                                                |
