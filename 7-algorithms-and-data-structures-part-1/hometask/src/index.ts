@@ -1,21 +1,29 @@
 import { Vertex } from "./Vertex";
 import { Edge } from "./Edge";
+import { Graph } from "./Graph";
 
 const vertices: Vertex<string>[] = [
-    new Vertex('1'),
-    new Vertex('2'),
-    new Vertex('3'),
-    new Vertex('4'),
-    new Vertex('5')
+    new Vertex<string>('1'),
+    new Vertex<string>('2'),
+    new Vertex<string>('3'),
+    new Vertex<string>('4'),
+    new Vertex<string>('5')
 ];
 
-const [vertex1,vertex2, vertex3, vertex4, vertex5] = vertices;
+const [vertex1,vertex2, vertex3, vertex4] = vertices;
 
 const edges: Edge<string>[] = [
-    new Edge(vertex1, vertex4, 3),
-    new Edge(vertex1, vertex2, 5),
-    new Edge(vertex1, vertex3, 4),
-    new Edge(vertex2, vertex4, 6),
-    new Edge(vertex2, vertex3, 5),
+    new Edge<string>(vertex1.key, vertex4.key, 3),
+    new Edge<string>(vertex1.key, vertex2.key, 5),
+    new Edge<string>(vertex1.key, vertex3.key, 4),
+    new Edge<string>(vertex2.key, vertex4.key, 6),
+    new Edge<string>(vertex2.key, vertex3.key, 5),
 ];
+
+const graph = new Graph<string>();
+
+vertices.forEach(verticle => graph.addVertex(verticle.key));
+edges.forEach(edge => graph.addEdge(edge.from, edge.to, edge.weight));
+
+console.log(graph.getAdjacencyList());
 
