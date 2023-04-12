@@ -14,8 +14,8 @@ export class Graph<T> implements WeightedGraph<T> {
             throw new Error("Invalid doesn't exist");
         }
 
-        this.adjacencyList.get(vertex1)?.push([vertex2, weight]);
-        this.adjacencyList.get(vertex2)?.push([vertex1, weight]);
+        this.adjacencyList.get(vertex1).push([vertex2, weight]);
+        this.adjacencyList.get(vertex2).push([vertex1, weight]);
     }
 
     getAdjacencyList(): any {
