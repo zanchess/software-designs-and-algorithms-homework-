@@ -8,7 +8,7 @@ export class ItemWeightComparator implements ItemComparator {
         } else if (first.weight < second.weight){
             return -1
         } else {
-            first.compareTo(second)
+            return first.compareTo(second)
         }
     }
 }

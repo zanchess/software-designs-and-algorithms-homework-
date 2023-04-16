@@ -1,7 +1,7 @@
 import { Item } from "./Item";
 
 export abstract class Weapon extends Item {
-    static MODIFIER_CHANGE_RATE = 0.05;
+    static  MODIFIER_CHANGE_RATE = 0.05;
     protected baseDamage: number;
     protected damageModifier: number = 0;
     private baseDurability: number;
